@@ -1,8 +1,8 @@
 import sqlalchemy
 
-engine = sqlalchemy.create_engine('postgresql+psycopg2://postgres:6496@localhost:5432/homework v2')
+engine = sqlalchemy.create_engine('postgresql+psycopg2://postgres:****@localhost:5432/homework v2')
 connection = engine.connect()
-i = 0
+
 
 # Пользовательский ввод
 def insert_genre(i=0):
@@ -82,12 +82,6 @@ def show_singer_onename():
     FROM singer
     WHERE name NOT LIKE '%% %%' ;""").fetchall()
     print(res)
-
-# def find_song_with_my(word='my', ruword='мой'):
-#     res = connection.execute("""SELECT name
-#     FROM song
-#     WHERE name LIKE '%%(%s)%%' or '%%(%s)%%' """, (word, ruword)).fetchall()
-#     print(res)
 
 def find_song_with_my():
     res = connection.execute("""SELECT name 
